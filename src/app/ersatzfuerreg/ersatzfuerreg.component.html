@@ -1,0 +1,84 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="registration-form">
+  <div class="container">
+    <div class="container-registration">
+      <h1>Registrieren</h1>
+    </div>
+    <hr>
+    <div class="form-group" *ngIf="registerForm.get('Benutzername')?.errors && registerForm.get('Benutzername')?.dirty">
+      <p *ngIf="registerForm.get('Benutzername')?.errors?.['required']">Der Benutzername ist erforderlich.</p>
+      <p *ngIf="registerForm.get('Benutzername')?.errors?.['pattern']">Der Benutzername enthält ungültige Zeichen.</p>
+      <p *ngIf="registerForm.get('Benutzername')?.errors?.['benutzernameExists']">Der Benutzername ist bereits vergeben.</p>
+    </div>
+    <div class="form-group" [ngClass]="{'invalid-input': registerForm.get('Benutzername')?.invalid && registerForm.get('Benutzername')?.touched}">
+      <label>Benutzername</label>
+      <input type="text" formControlName="Benutzername" class="form-control" />
+      <small id="BenutzernameHelp" class="form-text text-muted">Nur Buchstaben erlaubt. Keine Umlaute wie ä,ö oder ü.</small>
+    </div>
+    <div class="form-group" [ngClass]="{'invalid-input': registerForm.get('Nachname')?.invalid && registerForm.get('Nachname')?.touched}">
+      <label>Nachname</label>
+      <input type="text" formControlName="Nachname" class="form-control" />
+      <small id="NachnameHelp" class="form-text text-muted">Nur Buchstaben erlaubt. Keine Umlaute wie ä,ö oder ü.</small>
+
+    </div>
+    <div class="form-group" [ngClass]="{'invalid-input': registerForm.get('Vorname')?.invalid && registerForm.get('Vorname')?.touched}">
+      <label>Vorname</label>
+      <input type="text" formControlName="Vorname" class="form-control" />
+      <small id="VornameHelp" class="form-text text-muted">Nur Buchstaben erlaubt. Keine Umlaute wie ä,ö oder ü.</small>
+
+    </div>
+    <div class="form-group" *ngIf="registerForm.get('Geburtsdatum')?.errors && registerForm.get('Geburtsdatum')?.dirty">
+      <p *ngIf="registerForm.get('Geburtsdatum')?.errors?.['required']">Das Geburtsdatum ist erforderlich.</p>
+      <p *ngIf="registerForm.get('Geburtsdatum')?.errors?.['minAge']">Sie müssen mindestens 18 Jahre alt sein.</p>
+    </div>
+    <div class="form-group" [ngClass]="{'invalid-input': registerForm.get('Geburtsdatum')?.invalid && registerForm.get('Geburtsdatum')?.touched}">
+      <label>Geburtsdatum</label>
+      <input type="date" formControlName="Geburtsdatum" class="form-control" />
+      <small id="GeburtsdatumHelp" class="form-text text-muted">Bitte geben Sie Ihr Geburtsdatum ein.</small>
+    </div>
+    
+    <div class="form-group">
+      <label>Telefonnummer</label>
+      <input type="text" formControlName="Telefonnummer" class="form-control" maxlength="8" />
+      <small id="TelefonnummerHelp" class="form-text text-muted">Nur Zahlen und eine Null davor. Keine Sonderzeichen.</small>
+    </div>
+    <div class="form-group" *ngIf="registerForm.get('EMail')?.errors && registerForm.get('EMail')?.dirty">
+      <p *ngIf="registerForm.get('EMail')?.errors?.['required']">Die E-Mail ist erforderlich.</p>
+      <p *ngIf="registerForm.get('EMail')?.errors?.['pattern']">Die E-Mail enthält ungültige Zeichen.</p>
+      <p *ngIf="registerForm.get('EMail')?.errors?.['emailExists']">Die E-Mail ist bereits vergeben.</p>
+    </div>
+    <div class="form-group" [ngClass]="{'invalid-input': registerForm.get('EMail')?.invalid && registerForm.get('EMail')?.touched}">
+      <label>E-Mail</label>
+      <input type="email" formControlName="EMail" class="form-control" />
+      <small id="EMailHelp" class="form-text text-muted">Bitte eine gültige E-Mail-Adresse eingeben.</small>
+    </div>
+    
+    <div class="form-group" [ngClass]="{'invalid-input': registerForm.get('Passwort')?.invalid && registerForm.get('Passwort')?.touched}">
+      <label>Passwort</label>
+      <input type="password" formControlName="Passwort" class="form-control" />
+      <small id="PasswortHelp" class="form-text text-muted">Muss mindestens einen Großbuchstaben, einen Kleinbuchstaben, eine Zahl und ein Sonderzeichen enthalten.</small>
+    </div>
+    <div class="form-group" [ngClass]="{'invalid-input': registerForm.get('Straße')?.invalid && registerForm.get('Straße')?.touched}">
+      <label>Straße</label>
+      <input type="text" formControlName="Straße" class="form-control" />
+      <small id="StraßeHelp" class="form-text text-muted">Nur Buchstaben, Bindestriche, Punkte und Leerzeichen sind erlaubt.</small>
+    </div>
+    <div class="form-group" [ngClass]="{'invalid-input': registerForm.get('Hausnummer')?.invalid && registerForm.get('Hausnummer')?.touched}">
+      <label>Hausnummer</label>
+      <input type="text" formControlName="Hausnummer" class="form-control" />
+      <small id="HausnummerHelp" class="form-text text-muted">Nur Zahlen erlaubt.</small>
+    </div>
+    <div class="form-group" [ngClass]="{'invalid-input': registerForm.get('Stadt')?.invalid && registerForm.get('Stadt')?.touched}">
+      <label>Stadt</label>
+      <input type="text" formControlName="Stadt" class="form-control" />
+      <small id="StadtHelp" class="form-text text-muted">Nur Buchstaben und Leerzeichen erlaubt.</small>
+    </div>
+    <div class="form-group" [ngClass]="{'invalid-input': registerForm.get('PLZ')?.invalid && registerForm.get('PLZ')?.touched}">
+      <label>PLZ</label>
+      <input type="text" formControlName="PLZ" class="form-control" maxlength="5"/>
+      <small id="PLZHelp" class="form-text text-muted">Muss genau 5 Ziffern enthalten.</small>
+    </div>
+    <div class="form-group">
+      <button type="submit" [disabled]="!registerForm.valid" class="submit-button">Registrieren</button>
+    </div>
+  </div>
+</form>

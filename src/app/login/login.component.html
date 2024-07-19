@@ -1,0 +1,43 @@
+<form (ngSubmit)="login()">
+  <div class="login-container">
+    <div class="login-header">
+      <h1>Anmelden</h1>
+    </div>
+
+    <hr />
+
+    <div class="login-fields">
+      <label for="email"><b>E-Mail-Adresse</b></label
+      ><br />
+      <input
+        type="text"
+        [(ngModel)]="email"
+        name="email"
+        id="email"
+        placeholder="Deine E-Mail-Adresse"
+        required
+      /><br />
+      <label for="password"><b>Passwort</b></label
+      ><br />
+      <input
+        type="password"
+        [(ngModel)]="password"
+        name="password"
+        id="password"
+        placeholder="Passwort"
+        required
+      /><br />
+    </div>
+
+    <div class="login-links">
+      <a routerLink="/signup">Noch kein Konto? Hier registrieren</a>
+    </div>
+
+    <hr />
+
+    <div class="login-actions">
+      <button type="submit" class="login-button">Anmelden</button><br />
+      <a routerLink="/home">Zurück zur Startseite</a>
+    </div>
+  </div>
+</form>

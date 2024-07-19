@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <div class="card-container">
+        <div class="row">
+          <div *ngFor="let ware of produktkatalog" class="col-md-3">
+            <div class="card">
+              <img [src]="ware.bild" alt="Produktfoto">
+              <h3>{{ ware.Bezeichnung }}</h3>
+              <p>Preis: {{ ware.Preis | currency:'EUR' }}</p>
+              <div class="order-form">
+                <input type="number" min="0" [(ngModel)]="ware.quantity" placeholder="Anzahl">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="warenkorb-container sticky">
+        <h2>Warenkorb</h2>
+        <div *ngIf="warenkorb.length === 0" class="empty-cart">
+          Der Warenkorb ist leer.
+        </div>
+        <div *ngFor="let artikel of warenkorb" class="warenkorb-artikel">
+          <p>{{ artikel.Bezeichnung }} - Anzahl: {{ artikel.quantity }} - Preis: {{ (artikel.Preis * artikel.quantity) | currency:'EUR' }}</p>
+        </div>
+    </div>
+  </div>
+</div>

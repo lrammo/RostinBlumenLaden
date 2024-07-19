@@ -1,0 +1,91 @@
+<div class="events-container form-container">
+    <h4>Bevorstehende Events</h4>
+    <div *ngFor="let event of events.events">
+        <div class="event-container">
+          <div class="event-info">
+            <div class="event-name">{{ event.name }}</div>
+            <div class="event-datum">{{ event.datum }}</div>
+          </div>
+          <div class="teilnehmer-container">
+            <div *ngIf="getTeilnehmerForEvent(event.id)?.length === 0">Keine Teilnehmer vorhanden.</div>
+            <div *ngFor="let teilnehmer of getTeilnehmerForEvent(event.id)">
+              <div class="teilnehmer-item">
+                <div class="teilnehmer-name">{{ teilnehmer.vorname }} {{ teilnehmer.nachname }}</div>
+                <div class="teilnehmer-email">{{ teilnehmer.email }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>      
+  </div>  
+  
+  
+<div class="form-container">
+    <form (submit)="submitForm()">
+      <h4>Persönliche Daten</h4>
+      <div class="form-group">
+        <label for="benutzername">Benutzername:</label>
+        <input type="text" id="benutzername" name="benutzername" [(ngModel)]="user.benutzername" required readonly>
+      </div>
+      <div class="form-group">
+        <label for="mitarbeiterID">Mitarbeiter-ID:</label>
+        <input type="text" id="mitarbeiterID" name="mitarbeiterID" [(ngModel)]="user.mitarbeiterID" required readonly>
+      </div>
+  
+      <div class="name-container">
+        <div class="form-group">
+          <label for="vorname">Vorname:</label>
+          <input type="text" id="vorname" name="vorname" [(ngModel)]="user.vorname" required #vorname>
+        </div>
+        <div class="form-group">
+          <label for="nachname">Nachname:</label>
+          <input type="text" id="nachname" name="nachname" [(ngModel)]="user.nachname" required #nachname>
+        </div>
+      </div>
+  
+      <div class="address-container">
+        <div class="form-group">
+          <label for="strasse">Straße:</label>
+          <input type="text" id="strasse" name="strasse" [(ngModel)]="user.strasse" required #strasse>
+        </div>
+        <div class="form-group">
+          <label for="hausnummer">Hausnummer:</label>
+          <input type="number" id="hausnummer" name="hausnummer" [(ngModel)]="user.hausnummer" required #hausnummer>
+        </div>
+        <div class="form-group">
+          <label for="stadt">Stadt:</label>
+          <input type="text" id="stadt" name="stadt" [(ngModel)]="user.stadt" required #stadt>
+        </div>
+        <div class="form-group">
+          <label for="plz">PLZ:</label>
+          <input type="number" id="plz" name="plz" [(ngModel)]="user.plz" required #plz>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="telefonnummer">Telefonnummer:</label>
+        <input type="tel" id="telefonnummer" name="telefonnummer" [(ngModel)]="user.telefonnummer" required #telefon>
+      </div>
+      <div class="form-group">
+        <label for="email">E-Mail:</label>
+        <input type="email" id="email" name="email" [(ngModel)]="user.email" required readonly>
+      </div>
+  
+      <button type="submit">Speichern</button>
+    </form>
+  </div>
+  <div class="form-container">
+    <form (submit)="submitFormPasswort()">
+      <h4>Passwort ändern</h4>
+      <div class="form-group">
+        <label for="oldPassword">Altes Passwort:</label>
+        <input type="password" id="oldPassword" name="oldPassword" required #oldPasswordInput>
+      </div>
+      <div class="form-group">
+        <label for="newPassword">Neues Passwort:</label>
+        <input type="password" id="newPassword" name="newPassword" required #newPasswordInput>
+      </div>
+      <button type="submit">Passwort ändern</button>
+    </form>
+  </div>
+  

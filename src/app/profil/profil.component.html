@@ -1,0 +1,64 @@
+<div class="event-container form-container">
+  <h4>Angemeldete Events</h4>
+  <div *ngIf="kundenevents.events.length === 0">Keine angemeldeten Events vorhanden.</div>
+  <div *ngFor="let event of kundenevents.events">
+    <div class="event-item">
+      <div class="event-name">{{ event.name }}</div>
+      <div class="event-datum">{{ event.datum }}</div>
+    </div>
+  </div>
+</div>
+
+<div class="form-container">
+  <form (submit)="submitForm()">
+    <h4>Persönliche Daten</h4>
+    <div class="form-group">
+      <label for="benutzername">Benutzername:</label>
+      <input type="text" id="benutzername" name="benutzername" [(ngModel)]="user.benutzername" required readonly>
+    </div>
+    <div class="form-group">
+      <label for="kundenID">Kunden-ID:</label>
+      <input type="text" id="kundenID" name="kundenID" [(ngModel)]="user.kundenID" required readonly>
+    </div>
+
+    <div class="name-container">
+      <div class="form-group">
+        <label for="vorname">Vorname:</label>
+        <input type="text" id="vorname" name="vorname" [(ngModel)]="user.vorname" required readonly>
+      </div>
+      <div class="form-group">
+        <label for="nachname">Nachname:</label>
+        <input type="text" id="nachname" name="nachname" [(ngModel)]="user.nachname" required readonly>
+      </div>
+    </div>
+
+    <div class="address-container">
+      <div class="form-group">
+        <label for="strasse">Straße:</label>
+        <input type="text" id="strasse" name="strasse" [(ngModel)]="user.strasse" required readonly #strasse>
+      </div>
+      <div class="form-group">
+        <label for="hausnummer">Hausnummer:</label>
+        <input type="number" id="hausnummer" name="hausnummer" [(ngModel)]="user.hausnummer" required readonly #hausnummer>
+      </div>
+      <div class="form-group">
+        <label for="stadt">Stadt:</label>
+        <input type="text" id="stadt" name="stadt" [(ngModel)]="user.stadt" required readonly #stadt>
+      </div>
+      <div class="form-group">
+        <label for="plz">PLZ:</label>
+        <input type="number" id="plz" name="plz" [(ngModel)]="user.plz" required readonly #plz>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="telefonnummer">Telefonnummer:</label>
+      <input type="tel" id="telefonnummer" name="telefonnummer" [(ngModel)]="user.telefonnummer" required readonly>
+    </div>
+    <div class="form-group">
+      <label for="email">E-Mail:</label>
+      <input type="email" id="email" name="email" [(ngModel)]="user.email" required readonly>
+    </div>
+  </form>
+</div>
+

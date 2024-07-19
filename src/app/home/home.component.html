@@ -1,0 +1,89 @@
+<div class="container" style="display: flex; align-items: stretch">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="welcome-text">
+        <h3>Willkommen bei Rostin Blumen!</h3>
+        <div class="welcome-container">
+          <p>
+            Blumen sind unsere Leidenschaft und das spiegelt sich in jedem
+            Strauß wider, den wir für Sie binden. Bei uns finden Sie nicht nur
+            frische und saisonale Blumen, sondern auch kreative Arrangements für
+            jeden Anlass. Ob Hochzeit, Geburtstag, Jubiläum oder einfach nur, um
+            jemandem ein Lächeln ins Gesicht zu zaubern wir bieten eine breite
+            Auswahl an hochwertigen Blumen und Pflanzen, die stets mit Liebe und
+            Sorgfalt zusammengestellt werden.
+          </p>
+          <p>
+            Unser engagiertes Team aus erfahrenen Floristen berät Sie gerne und
+            hilft Ihnen dabei, das perfekte Blumenarrangement zu finden. Wir
+            legen großen Wert auf Qualität und Nachhaltigkeit, weshalb wir
+            unsere Blumen von vertrauenswürdigen Gärtnereien und Anbietern
+            beziehen. Besuchen Sie uns in unserem charmanten Laden oder
+            entdecken Sie unser Angebot bequem online. Lassen Sie sich von der
+            Vielfalt und Schönheit unserer Blumen inspirieren!
+          </p>
+          <p>
+            Tauchen Sie ein in die Welt der Blumen und erleben Sie die Freude,
+            die sie verbreiten können.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<p></p>
+<p></p>
+<p></p>
+
+<div class="container" style="display: flex; align-items: stretch">
+  <div class="row">
+    <div class="col-12 mb-4" *ngFor="let blume of blumen">
+      <div class="card">
+        <h3>Ihre Blumen warten auf Sie</h3>
+        <div class="row g-0">
+          <div class="col-md-4">
+            <div class="card-img-container">
+              <img
+                [src]="blume.image"
+                class="img-fluid rounded-start card-img"
+                alt="Bild von {{ blume.Name }}"
+              />
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title"><b>Name:</b> {{ blume.name }}</h5>
+              <p class="card-text"><b>Art:</b> {{ blume.art }}</p>
+            </div>
+            <div class="card-body">
+              <p class="card-text">
+                <b>Beschreibung:</b> {{ blume.description }}
+                
+              </p>
+              <p><b>Preis:</b> {{blume.preis}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 mb-4" *ngFor="let event of veranstaltungen.events">
+      <div class="card">
+        <h3>Unser nächstes Event steht bevor</h3>
+        <div class="card-body">
+          <h5 class="card-title">{{ event.title }}</h5>
+          <div class="card-text">
+            <p><b>Thema:</b> {{ event.theme }}</p>
+            <p><b>Datum:</b> {{ event.date }}</p>
+            <p><b>Beschreibung:</b></p>
+            <p>{{ event.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

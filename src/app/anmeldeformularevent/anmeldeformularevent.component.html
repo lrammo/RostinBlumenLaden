@@ -1,0 +1,32 @@
+<form class="contact-form" (submit)="submitForm()">
+    
+  <h3 class="section-title">Kunden-Informationen</h3>
+  
+  <div class="form-group">
+    <label for="nachname">Nachname:</label>
+    <input type="text" id="name" name="name" [value]="user.vorname + ' ' + user.nachname" required readonly>
+  </div>
+  <div class="form-group">
+    <label for="telefonnummer">Telefonnummer:</label>
+    <input type="tel" id="telefonnummer" name="telefonnummer" [(ngModel)]="user.telefonnummer" required>
+  </div>
+  <div class="form-group">
+    <label for="email">E-Mail:</label>
+    <input type="email" id="email" name="email" [(ngModel)]="user.email" required readonly>
+  </div>
+  
+  <h3 class="section-title">Event-Informationen</h3>
+  
+  <div class="form-group">
+    <label for="eventname">Event-Name:</label>
+    <input type="text" id="eventname" name="eventname" [(ngModel)]="eventname" required readonly>
+  </div>
+  <div class="form-group">
+    <label for="eventdatum">Event-Datum:</label>
+    <input type="text" id="eventdatum" name="eventdatum" [(ngModel)]="eventdatum" required readonly>
+  </div>
+  
+  <button type="submit" class="submit-button">Anmelden</button>
+  
+</form>
+  

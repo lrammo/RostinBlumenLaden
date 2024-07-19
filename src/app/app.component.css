@@ -1,0 +1,102 @@
+#mainContainer {
+    padding: 0;
+}
+
+
+#myNavbar{
+    background: #cc9290 !important;
+    color: white !important;
+}
+
+#myNavbar div div ul li a.nav-link{
+    color: white !important;
+}
+
+#myNavbar div div ul li a:hover.nav-link{
+    color: rgb(176, 202, 7) !important;
+}
+
+.loginA {
+    float: right !important;
+    color: white; 
+ 
+}
+
+.loginLi {
+    width: 100% !important;
+}
+
+.loginUl {
+    width: 100% !important;
+    list-style-type: none;
+    display: flex;
+    padding: 7px 0;
+    margin-bottom: 0;
+}
+
+
+.navbar-nav .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 10rem;
+    padding: 0.5rem 0;
+    margin: 0.125rem 0 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); 
+  }
+  
+  .navbar-nav .dropdown-menu.show {
+    display: block;
+  }
+  
+  .navbar-nav .dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 1.5rem; 
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+  }
+  
+  .navbar-nav .dropdown-item:hover,
+  .navbar-nav .dropdown-item:focus {
+    color: #212529;
+    background-color: #f8f9fa;
+  }
+  
+  .navbar-nav .dropdown-item:active {
+    color: #212529;
+    background-color: #e9ecef;
+  }
+  
+  .navbar-nav .dropdown-divider {
+    height: 0;
+    margin: 0.5rem 0;
+    overflow: hidden;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+  }
+  
+  
+  .navbar-nav .dropdown-item.active,
+  .navbar-nav .dropdown-item:active {
+    color: #212529;
+    background-color: #f8f9fa;
+  }
+  
+
+

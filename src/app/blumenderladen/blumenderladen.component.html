@@ -1,0 +1,32 @@
+
+<div class="container" style="display: flex; align-items: stretch;">
+  <div class="row">
+    <div class="col-12 mb-4" *ngFor="let blume of blumenderladen">
+      <div class="card">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <div class="card-img-container">
+              <img [src]="blume.image" class="img-fluid rounded-start card-img" alt="Bild von {{blume.blumename}}">
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card-body">
+              <h5 class="card-title">{{blume.art}}: {{blume.name}}</h5>
+              <p class="card-text"><b>Art:</b> {{blume.art}}</p>
+             
+              <p class="card-text"><b>Preise:</b> {{blume.preis}}</p>
+
+             
+
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card-body">
+              <p class="card-text"><b>Beschreibung:</b> {{blume.description}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

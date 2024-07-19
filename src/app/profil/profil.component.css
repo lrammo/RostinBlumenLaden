@@ -1,0 +1,138 @@
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="email"],
+  input[type="password"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+  }
+  
+  input[type="text"]:focus,
+  input[type="number"]:focus,
+  input[type="tel"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus,
+  textarea:focus {
+    outline: none;
+    border-color: #999;
+  }
+  
+  button[type="submit"] {
+    background-color: #e8e8e8;
+    color: #333333;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #dcdcdc;
+  }
+  
+  .name-container {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .address-container {
+    padding: 10px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  
+  .address-container h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+  }
+  .bestellung-container {
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+  }
+  
+  .bestellung-container:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .bestellnummer-datum {
+    display: flex;
+    align-items: center;
+  }
+  
+  .bestellnummer {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  
+  .datum {
+    color: #888888;
+  }
+
+  .event-container {
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  
+  .event-container h4 {
+    color: #333;
+  }
+  
+  .event-container .event-item {
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+  }
+  
+  .event-container .event-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .event-container .event-name {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  
+  .event-container .event-datum {
+    color: #888888;
+  }
+  
+    

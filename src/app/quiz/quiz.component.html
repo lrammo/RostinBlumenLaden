@@ -1,0 +1,32 @@
+<body>
+    <div class="quiz-container">  
+
+    <div *ngIf="currentQuestion">
+    <h2>Frage {{ currentQuestionIndex + 1 }}:</h2>
+    <p>{{ currentQuestion.questionText }}</p>
+  
+    <div *ngFor="let option of currentQuestion.answerOptions">
+      <input
+        type="radio"
+        name="answer"
+        [value]="option.value"
+        (change)="selectAnswer(option.value)"
+        [checked]="selectedAnswers[currentQuestionIndex] === option.value"
+      />
+      <label>{{ option.label }}</label>
+    </div>
+  
+    <button (click)="previousQuestion()" [disabled]="currentQuestionIndex === 0">Vorherige Frage</button>
+    <button (click)="nextQuestion()" [disabled]="currentQuestionIndex === questions.length - 1">Nächste Frage</button>
+  
+    <div *ngIf="currentQuestionIndex === questions.length - 1">
+      <button (click)="evaluateAnswers()">Quiz Auswerten</button>
+    </div>
+  
+    <div *ngIf="quizResult">
+      <h3>Quiz Ergebnis:</h3>
+      <p>{{ quizResult }}</p>
+    </div>
+  </div>
+  </div>
+</body>

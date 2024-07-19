@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 mb-4" *ngFor="let event of veranstaltungen.events">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ event.title }}</h5>
+          <div class="card-text">
+            <p><b>Thema:</b> {{ event.theme }}</p>
+            <p><b>Datum:</b> {{ event.date }}</p>
+            <p><b>Beschreibung:</b></p>
+            <p>{{ event.description }}</p>
+          </div>
+          <button *ngIf="isLoggedIn()" class="termin" (click)="goToRegistration(event.eventID,event.title,event.date)">Jetzt anmelden</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
